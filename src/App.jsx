@@ -1,10 +1,10 @@
 import './App.css';
-import Bottao from './components/Bottao/Bottao.jsx'
+import Input from './components/Input/Input.jsx'
 
 function App() {
   return (
     <div className="App">
-      <Bottao />
+      <Input />
     </div>
   );
 }
