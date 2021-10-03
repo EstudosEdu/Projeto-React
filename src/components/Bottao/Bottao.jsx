@@ -5,7 +5,9 @@ import styled from 'styled-components';
 
 const Bottao = () => {
   const Btn = styled.button`
-    padding: 10px 50px;
+    display: flex;
+    align-items: center;
+    padding: 10px 160px;
     background: var(--back-btn);
     border: none;
     color: white;

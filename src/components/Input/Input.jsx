@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Input = () => {
+const Input = (props) => {
   const Title = styled.p`
     color: #343F4B;
     font-size: 16px;
@@ -15,7 +15,7 @@ const Input = () => {
     padding: 0px 0px 7px 0px;
     outline: none;
     font-size: 14px;
-    width: 80%;
+    width: 100%;
     font-family: 'Roboto';
     color: #777777;
   `;
@@ -30,8 +30,13 @@ const Input = () => {
   return(
     <>
       <Container>
-      <Title>Nome do Proprietario:</Title>
-      <Digite type="text" placeholder="Digite seu nome" />
+        <Title>
+          {props.dados}
+        </Title>
+        <Digite 
+          type="text" 
+          placeholder="Digite seu nome" 
+        />
       </Container>
     </>
   );

@@ -1,3 +1,7 @@
 :root{
   --back-btn: #47525E;
 }
+.App {
+  display: flex;
+  justify-content: center;
+}

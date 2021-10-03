@@ -1,10 +1,10 @@
 import './App.css';
-import Input from './components/Input/Input.jsx'
+import Inicial from './Layout/Inicial/Inicial.jsx'
 
 function App() {
   return (
     <div className="App">
-      <Input />
+      <Inicial />
     </div>
   );
 }
