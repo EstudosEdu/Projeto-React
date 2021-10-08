@@ -1,25 +1,16 @@
 import React from 'react';
-import styled from 'styled-components';
+import { Btn } from './style.jsx'
+ 
+const Bottao = (props) => {
 
-
-
-const Bottao = () => {
-  const Btn = styled.button`
-    display: flex;
-    align-items: center;
-    padding: 10px 160px;
-    background: var(--back-btn);
-    border: none;
-    color: white;
-    font-size: 14px;
-    font-weight: 400;
-  `;
 
   return(
     <>
-      <Btn>GUARDAR</Btn>
+      <Btn>
+        {props.nome}
+      </Btn>
     </>
-  )
-}
+  );
+};
 
-export default Bottao
+export default Bottao;

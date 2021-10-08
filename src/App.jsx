@@ -1,10 +1,12 @@
 import './App.css';
-import Inicial from './Layout/Inicial/Inicial.jsx'
+import Adicionar from './Layout/Adicionar/Adicionar.jsx';
+import InputSelect from './components/InputSelect/InputSelect.jsx'
 
 function App() {
   return (
     <div className="App">
-      <Inicial />
+      <Adicionar />
+      {/* < InputSelect/> */}
     </div>
   );
 }
