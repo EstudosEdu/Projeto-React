@@ -1,8 +1,8 @@
 import React from 'react';
 import { ContainerGeral, ContTitle, Title, Add } from './style.jsx'
-import Input from '../../components/Input/Input.jsx';
-import Bottao from '../../components/Bottao/Bottao.jsx';
-import InputSelect from '../../components/InputSelect/InputSelect.jsx';
+import Input from '../../Input/Input.jsx';
+import Bottao from '../../Bottao/Bottao.jsx';
+import InputSelect from '../../InputSelect/InputSelect.jsx';
 
 
 const Adicionar = () => {
