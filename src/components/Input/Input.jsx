@@ -1,5 +1,5 @@
 import React from 'react';
-import { Title, Digite, Container } from './style.jsx'
+import { Title, Digite, Container } from './style.jsx';
 
 const Input = (props) => {
 

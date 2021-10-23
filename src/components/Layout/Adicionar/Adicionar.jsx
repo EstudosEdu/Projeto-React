@@ -7,7 +7,6 @@ import InputSelect from '../../InputSelect/InputSelect.jsx';
 
 const Adicionar = () => {
 
-
   return(
     <>
       <ContainerGeral>
