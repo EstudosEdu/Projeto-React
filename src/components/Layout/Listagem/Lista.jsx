@@ -22,6 +22,8 @@ const Lista = () => {
         </span>
 
         <LinhaLista />
+        <LinhaLista />
+        <LinhaLista />
 
       </ContainerGeral>
     </>

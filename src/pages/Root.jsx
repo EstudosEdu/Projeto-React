@@ -3,9 +3,10 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
+  Link
 } from 'react-router-dom';
 import Lista from '../components/Layout/Listagem/Lista.jsx';
-import Add from '../components/Layout/Adicionar/Adicionar.jsx'
+import Add from '../components/Layout/Adicionar/Adicionar.jsx';
 
 
 const Root = () => {
