@@ -4,16 +4,15 @@ import './style.css'
  
 const Bottao = (props) => {
 
-
   return(
     <>
-      {/* <Link 
-      to='/list' 
+      <Link 
+      to={props.link} 
       className="link" 
       onClick={props.onCreate}>
         {props.nome}
-      </Link> */}
-      <button onClick={props.onCreate} className="link" >{props.nome}</button>
+      </Link>
+      {/* <button onClick={props.onCreate} className="link" >{props.nome}</button> */}
     </>
   );
 };

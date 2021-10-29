@@ -1,5 +1,5 @@
 import React from 'react';
-import { data } from '../../db.js';
+import { data } from '../../db.jsx';
 import { Title, Digite, Container } from './style.jsx'
 
 const InputSelect = (props) => {

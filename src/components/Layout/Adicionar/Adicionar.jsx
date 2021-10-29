@@ -3,8 +3,8 @@ import { ContainerGeral, ContTitle, Title, Add } from './style.jsx'
 import Input from '../../Input/Input.jsx';
 import Bottao from '../../Bottao/Bottao.jsx';
 import InputSelect from '../../InputSelect/InputSelect.jsx';
-import { create } from '../../../utils/functionsDB.js';
-import { data } from '../../../db.js'
+import { create, btnAtivado } from '../../../utils/functionsDB.js';
+import { data } from '../../../db.jsx'
 
 
 const Adicionar = () => {
@@ -57,7 +57,11 @@ const Adicionar = () => {
 
         </div>
 
-        <Bottao nome="GUARDAR" onCreate={()=>create()} />
+        <Bottao 
+          nome="GUARDAR" 
+          onCreate={()=>create()}
+          link={"/list"}
+        />
       </ContainerGeral>
     </>
   );
