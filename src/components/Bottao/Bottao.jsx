@@ -1,14 +1,19 @@
 import React from 'react';
-import { Btn } from './style.jsx'
+import { Link } from 'react-router-dom';
+import './style.css'
  
 const Bottao = (props) => {
 
 
   return(
     <>
-      <Btn>
+      {/* <Link 
+      to='/list' 
+      className="link" 
+      onClick={props.onCreate}>
         {props.nome}
-      </Btn>
+      </Link> */}
+      <button onClick={props.onCreate} className="link" >{props.nome}</button>
     </>
   );
 };

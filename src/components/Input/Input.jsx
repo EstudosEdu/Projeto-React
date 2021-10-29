@@ -11,7 +11,9 @@ const Input = (props) => {
         </Title>
         <Digite 
           type="text" 
-          placeholder="Digite seu nome" 
+          placeholder="Digite seu nome"
+          id={props.id}
+          maxLength={props.maximoCaracter}
         />
       </Container>
     </>
