@@ -13,14 +13,14 @@ import {
   ContLinhas
 } from './style.jsx';
 
-const LinhaLista = () => {
+const LinhaLista = (props) => {
   return(
     <>
       <ContLinhas>
         <ContGeral>
           <ContTitleList>
-            <NameCar>Corolla</NameCar>
-            <NumberVaga>Vaga 1</NumberVaga>
+            <NameCar>{props.dados.model}</NameCar>
+            <NumberVaga>Vaga {props.dados.vaga}</NumberVaga>
           </ContTitleList>
           <ContGeralImgs>
             <ContImgs>

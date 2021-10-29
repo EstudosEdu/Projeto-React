@@ -2,6 +2,7 @@ import React from 'react';
 import { Title, Add, ContainerGeral} from '../Adicionar/style.jsx';
 import Bottao from '../../Bottao/Bottao.jsx';
 import LinhaLista from '../../LinhaLista/LinhaLista.jsx';
+import { data } from '../../../db.js'
 
 const Lista = () => {
 
@@ -20,11 +21,11 @@ const Lista = () => {
         <span>
           <Bottao nome="Adicionar"/>
         </span>
-
-        <LinhaLista />
-        <LinhaLista />
-        <LinhaLista />
-
+        
+        {data.map((data) => (
+          <LinhaLista dados={data}/>
+        ))}
+      
       </ContainerGeral>
     </>
   )
