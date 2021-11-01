@@ -24,7 +24,7 @@ const Lista = () => {
         </span>
         
         {datas.map((datas) => (
-          <LinhaLista dados={datas}/>
+          <LinhaLista dados={datas} setDados={setDatas}/>
         ))}
       
       </ContainerGeral>

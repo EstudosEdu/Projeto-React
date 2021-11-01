@@ -12,6 +12,7 @@ import {
   NameCar,
   ContLinhas
 } from './style.jsx';
+import { deletar } from '../../utils/functionsDB.js';
 
 const LinhaLista = (props) => {
   return(
@@ -30,7 +31,7 @@ const LinhaLista = (props) => {
               <ImgsIcons src={ImgLupa} alt=""/>
             </ContImgs>
             <ContImgs>
-              <ImgsIcons src={ImgSair} alt=""/>
+              <ImgsIcons src={ImgSair} onClick={()=> props.setDados(deletar(props.dados.nome))}alt=""/>
             </ContImgs>
           </ContGeralImgs>
         </ContGeral>

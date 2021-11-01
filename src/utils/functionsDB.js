@@ -60,4 +60,14 @@ const verificaGeral = (inputNome, inputModelo, inputVaga, inputFuncionarios) => 
   }
 }
 
-// getAll 
+
+// delete 
+export const deletar = (props) => {
+  return data.map((i, index, arr) => {
+    let sla = data[index].nome
+    if(sla == props){
+      data.splice(index, 1)
+    }
+  })
+}
+
