@@ -1,13 +1,17 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { ContainerGeral, ContTitle, Title, Add } from './style.jsx'
 import Input from '../../Input/Input.jsx';
 import Bottao from '../../Bottao/Bottao.jsx';
 import InputSelect from '../../InputSelect/InputSelect.jsx';
-import { create, btnAtivado } from '../../../utils/functionsDB.js';
-import { data } from '../../../db.jsx'
+import { create } from '../../../utils/functionsDB.js';
+import { data } from '../../../db.jsx';
 
 
 const Adicionar = () => {
+  const [ infos, setInfos ] = useState({
+  nome: "",
+  model: "",
+  placa: ""})
 
   return(
     <>
@@ -23,20 +27,26 @@ const Adicionar = () => {
         <div>
           < Input 
             dados="Nome do Proprietario:"
-            id={"input-nome"}
+            id={1}
             maximoCaracter={"55"}
+            funcao={setInfos}
+            infos={infos}
             />
 
           < Input 
             dados="Modelo do Veiculo:"
-            id={"input-Modelo"}
+            id={2}
             maximoCaracter={"20"}
+            funcao={setInfos}
+            infos={infos}
             />
 
           < Input 
             dados="Placa do Veiculo:"
-            id={"input-placa"}
+            id={3}
             maximoCaracter={"7"}
+            funcao={setInfos}
+            infos={infos}
             />
 
           < InputSelect 
@@ -44,7 +54,7 @@ const Adicionar = () => {
             dados1="Funcionario"
             title="Funcionarios"
             data={data}
-            id={"input-Funcionarios"}
+            id={4}
             />
 
           < InputSelect 
@@ -52,15 +62,16 @@ const Adicionar = () => {
             dados1="1"
             title="Vaga"
             datas={data}
-            id={"input-Vaga"}
+            id={5}
             />
 
         </div>
 
         <Bottao 
-          nome="GUARDAR" 
-          onCreate={()=>create()}
-          link={"/list"}
+          nome="GUARDAR"
+          func={create}
+          info={infos}
+          // link={"/list"}
         />
       </ContainerGeral>
     </>
