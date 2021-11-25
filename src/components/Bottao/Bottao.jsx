@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './style.css'
+import './style.css';
+import { liberou } from '../../utils/functionsDB.js'
  
 const Bottao = (props) => {
 

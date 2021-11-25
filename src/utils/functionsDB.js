@@ -7,7 +7,7 @@
 // em js chama assim nomeDaFunção()
 
 import { data } from '../db.jsx'
-
+export let liberou = false
 
 // create 
 export const create = (dado) => {
@@ -53,12 +53,12 @@ const verificaGeral = (nome, modelo, placa) => {
       },
     )
     console.log(data)
+    liberou = true
     
   }else{
     alert('Preencha todas as informações!!!!')
   }
 }
-
 
 // delete 
 export const deletar = (props) => {

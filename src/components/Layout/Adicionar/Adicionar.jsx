@@ -53,7 +53,6 @@ const Adicionar = () => {
             dados="Nome do Funcionario:" 
             dados1="Funcionario"
             title="Funcionarios"
-            data={data}
             id={4}
             />
 

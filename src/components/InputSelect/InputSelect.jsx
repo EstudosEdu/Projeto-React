@@ -3,7 +3,6 @@ import { data } from '../../db.jsx';
 import { Title, Digite, Container } from './style.jsx'
 
 const InputSelect = (props) => {
-  
   return(
     <>
     <Container>
@@ -17,7 +16,7 @@ const InputSelect = (props) => {
         </option>
         {data.map((data)=>{
           return (
-          <option>
+          <option >
             { props.title === "Funcionarios"? data.funcionario : data.vaga }
           </option>
           )
