@@ -12,6 +12,10 @@ const Adicionar = () => {
   nome: "",
   model: "",
   placa: ""})
+  
+  const arr = []
+  for(let i = 1; i<= 30; i++){arr.push(i)}
+
 
   return(
     <>
@@ -53,16 +57,18 @@ const Adicionar = () => {
             dados="Nome do Funcionario:" 
             dados1="Funcionario"
             title="Funcionarios"
+            arr={arr}
             id={4}
-            />
+          />
 
           < InputSelect 
             dados="Vaga Alocada:" 
             dados1="1"
             title="Vaga"
             datas={data}
+            arr={arr}
             id={5}
-            />
+          />
 
         </div>
 

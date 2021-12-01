@@ -3,6 +3,48 @@ import { data } from '../../db.jsx';
 import { Title, Digite, Container } from './style.jsx'
 
 const InputSelect = (props) => {
+  const arr = props.arr;
+  // console.log(props.arr);
+  const arrFuncionarios = [
+    {nome: "joão"},
+    {nome: "Luan"},
+    {nome: "Natan"}
+  ];
+
+  function funcionarios(){
+    return arrFuncionarios.map((arrFuncionarios) => {
+      return(
+        <option>
+          { arrFuncionarios.nome }
+        </option>
+      )
+    })
+  }
+
+
+
+  function vaga(){
+    let newArr = data.map((data) => {
+        return data.vaga
+      });
+    
+    for(let i = 0; i< newArr.length; i++){
+      for(let j = 0; j < arr.length; j++){
+        if(arr[j] == newArr[i]){
+          arr.splice(j, 1);
+        }
+      } 
+    }
+ 
+    return arr.map((arr)=>{
+      return(
+        <option>{arr}</option>
+      )
+    })
+  }
+  
+
+
   return(
     <>
     <Container>
@@ -14,13 +56,10 @@ const InputSelect = (props) => {
         <option selected disabled>
           {props.title}
         </option>
-        {data.map((data)=>{
-          return (
-          <option >
-            { props.title === "Funcionarios"? data.funcionario : data.vaga }
-          </option>
-          )
-        })}
+
+        {props.title == "Vaga" ? vaga() : funcionarios()}
+
+
       </Digite>
     </Container>
     </>
