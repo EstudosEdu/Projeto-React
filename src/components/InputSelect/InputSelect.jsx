@@ -38,11 +38,10 @@ const InputSelect = (props) => {
  
     return arr.map((arr)=>{
       return(
-        <option>{arr}</option>
+        <option value={arr}>{arr}</option>
       )
     })
   }
-  
 
 
   return(
@@ -52,7 +51,18 @@ const InputSelect = (props) => {
         {props.dados}
       </Title>
       
-      <Digite id={props.id}>
+      <Digite 
+        id={props.id} 
+        onChange={e => props.funcao(
+          {
+            nome : props.id == 1 ? e.target.value : props.infos.nome,
+            model : props.id == 2 ? e.target.value : props.infos.model,
+            placa : props.id == 3 ? e.target.value : props.infos.placa,
+            funcionario : props.id == 4 ? e.target.value : props.infos.funcionario,
+            vaga : props.id == 5 ? e.target.value : props.infos.vaga
+          }
+        )}
+      >
         <option selected disabled>
           {props.title}
         </option>

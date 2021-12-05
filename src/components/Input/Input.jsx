@@ -18,7 +18,9 @@ const Input = (props) => {
           {
             nome : props.id == 1 ? e.target.value : props.infos.nome,
             model : props.id == 2 ? e.target.value : props.infos.model,
-            placa : props.id == 3 ? e.target.value : props.infos.placa
+            placa : props.id == 3 ? e.target.value : props.infos.placa,
+            funcionario : props.id == 4 ? e.target.value : props.infos.funcionario,
+            vaga : props.id == 5 ? e.target.value : props.infos.vaga
           })
         }
         

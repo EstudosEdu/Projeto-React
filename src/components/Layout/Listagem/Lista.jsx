@@ -20,7 +20,7 @@ const Lista = () => {
         </div>
 
         <span>
-          <Bottao nome="Adicionar" link={"/"}/>
+          <Bottao nome="Adicionar"/>
         </span>
         
         {datas.map((datas) => (

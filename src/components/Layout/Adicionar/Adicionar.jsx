@@ -5,16 +5,26 @@ import Bottao from '../../Bottao/Bottao.jsx';
 import InputSelect from '../../InputSelect/InputSelect.jsx';
 import { create } from '../../../utils/functionsDB.js';
 import { data } from '../../../db.jsx';
+import { Redirect } from 'react-router-dom'
+
 
 
 const Adicionar = () => {
   const [ infos, setInfos ] = useState({
   nome: "",
   model: "",
-  placa: ""})
+  placa: "",
+  vaga: "",
+  funcionario: ""});
   
   const arr = []
   for(let i = 1; i<= 30; i++){arr.push(i)}
+
+  const [redirect, setRedirect] = useState(null);
+
+  if(redirect){
+    return <Redirect to="/list"/>
+  }
 
 
   return(
@@ -59,6 +69,8 @@ const Adicionar = () => {
             title="Funcionarios"
             arr={arr}
             id={4}
+            funcao={setInfos}
+            infos={infos}
           />
 
           < InputSelect 
@@ -68,6 +80,8 @@ const Adicionar = () => {
             datas={data}
             arr={arr}
             id={5}
+            funcao={setInfos}
+            infos={infos}
           />
 
         </div>
@@ -76,6 +90,8 @@ const Adicionar = () => {
           nome="GUARDAR"
           func={create}
           info={infos}
+          redirect={redirect}
+          setredirect={setRedirect}
           // link={"/list"}
         />
       </ContainerGeral>
