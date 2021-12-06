@@ -26,7 +26,6 @@ const Adicionar = () => {
     return <Redirect to="/list"/>
   }
 
-
   return(
     <>
       <ContainerGeral>
