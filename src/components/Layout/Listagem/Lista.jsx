@@ -3,10 +3,20 @@ import { Title, Add, ContainerGeral} from '../Adicionar/style.jsx';
 import Bottao from '../../Bottao/Bottao.jsx';
 import LinhaLista from '../../LinhaLista/LinhaLista.jsx';
 import { data } from '../../../db.jsx';
-import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
+import Modal from '../../modal/Modal.jsx';
 
 const Lista = () => {
-  const [datas, setDatas] = useState(data)
+  const [datas, setDatas] = useState(data);
+
+  const [modal, setModal] = useState(null);
+  
+  const [dadoModal, setDadoModal] = useState('');
+  
+  
+  if(modal){
+    return <Modal dado={dadoModal} mod={modal} func={setModal}/>
+  }
 
   return(
     <>
@@ -21,7 +31,7 @@ const Lista = () => {
         </div>
         
         {datas.map((datas) => (
-          <LinhaLista dados={datas} setDados={setDatas}/>
+          <LinhaLista  modal={Modal} setModal={setModal} dadoModal={dadoModal} setDadoModal={setDadoModal} dados={datas} setDados={setDatas} setaData={setDatas}/>
         ))}
         <br />
         <br />
@@ -29,7 +39,6 @@ const Lista = () => {
           <Bottao nome="Adicionar"/>
           
         </span>
-      
       </ContainerGeral>
     </>
   )

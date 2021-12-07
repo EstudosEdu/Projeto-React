@@ -61,17 +61,14 @@ const verificaGeral = async (nome, modelo, placa, vaga, funcionario) => {
   return(res);
 }
 
-
-
-
-
+// =================================================================================================
 // delete 
-export const deletar = (props) => {
-  alert('Em breve')
-  // return data.map((i, index, arr) => {
-  //   let sla = data[index].nome
-  //   if(sla == props){
-  //     data.splice(index, 1)
-  //   }
-  // })
+export const deletar = async (props) => {
+  data.filter((v, i) => {
+    if(v.vaga == props){
+      data.splice(i, 1)
+    }
+  })
+  
+  return data
 }

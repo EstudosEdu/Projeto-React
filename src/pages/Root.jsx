@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom';
 import Lista from '../components/Layout/Listagem/Lista.jsx';
 import Add from '../components/Layout/Adicionar/Adicionar.jsx';
+import Modal from '../components/modal/Modal.jsx'
 
 
 const Root = () => {
