@@ -13,10 +13,9 @@ import {
   ContLinhas
 } from './style.jsx';
 import { deletar } from '../../utils/functionsDB.js';
-import Modal from '../modal/Modal.jsx';
 
 const LinhaLista = (props) => {
-  return(
+  return (
     <>
       <ContLinhas>
         <ContGeral>
@@ -26,16 +25,28 @@ const LinhaLista = (props) => {
           </ContTitleList>
           <ContGeralImgs>
             <ContImgs>
-              <ImgsIcons src={ImgLapis}  alt=""/>
+              <ImgsIcons src={ImgLapis} alt="" />
             </ContImgs>
             <ContImgs>
-              <ImgsIcons src={ImgLupa} onClick={() => {
-                props.setModal(true)
-                props.setDadoModal(props.dados)  
-              }} alt=""/>
+              <ImgsIcons
+                src={ImgLupa}
+                onClick={() => {
+                  props.setModal(true)
+                  props.setDadoModal(props.dados)
+                }}
+                alt=""
+              />
             </ContImgs>
             <ContImgs>
-              <ImgsIcons src={ImgSair} onClick={ () => deletar(props.dados.vaga)} alt=""/>
+              <ImgsIcons
+                src={ImgSair}
+                onClick={() =>
+                  deletar(props.dados.vaga).then(dado =>
+                    props.setaData([...dado])
+                  )
+                }
+                alt=""
+              />
             </ContImgs>
           </ContGeralImgs>
         </ContGeral>

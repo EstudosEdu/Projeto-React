@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom';
 import Lista from '../components/Layout/Listagem/Lista.jsx';
 import Add from '../components/Layout/Adicionar/Adicionar.jsx';
-import Modal from '../components/modal/Modal.jsx'
+import Edit from  '../components/Editar/Editar.jsx';
 
 
 const Root = () => {
@@ -16,6 +16,7 @@ const Root = () => {
     <Router>
 
       <Switch>
+        <Route path="/edit" component={Edit} />
         <Route path="/list" component={Lista} />
         <Route path="/" component={Add} />
 

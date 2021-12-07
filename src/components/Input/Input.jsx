@@ -23,6 +23,7 @@ const Input = (props) => {
             vaga : props.id == 5 ? e.target.value : props.infos.vaga
           })
         }
+
         
         />
       </Container>
