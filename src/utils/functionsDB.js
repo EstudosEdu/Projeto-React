@@ -8,6 +8,7 @@
 
 import { data } from '../db.jsx';
 let res = false;
+let red = false;
 
 // create 
 export const create = async (dado) => {
@@ -46,6 +47,7 @@ const verificaGeral = async (nome, modelo, placa, vaga, funcionario) => {
     
     data.push(
       {
+        id: data.length + 1,
         nome: nome, 
         placa: placa, 
         model: modelo,
@@ -54,6 +56,7 @@ const verificaGeral = async (nome, modelo, placa, vaga, funcionario) => {
       },
     )
     res = true
+    console.log(data);
   }else{
     alert('Preencha todas as informações!!!!')
   }
@@ -70,4 +73,30 @@ export const deletar = async (props) => {
   })
   
   return data
+}
+
+// =================================================================================================
+// delete 
+
+export const update = async (dado) => {
+  red = false;
+  for(let i = 0; i < data.length; i++){
+    if(data[i].id == dado.id){
+      data[i].id = dado.id
+      data[i].nome = dado.nome
+      data[i].placa = dado.placa
+      data[i].model = dado.model
+      data[i].vaga = Number(dado.vaga)
+      data[i].funcionario = dado.funcionario
+    }
+  }
+  
+  // data.filter((v, i) => {
+    // if(v.id == dado.id){
+    //   console.log(Number(dado.vaga));
+    // }
+  // })
+
+  red = true;
+  return red;
 }

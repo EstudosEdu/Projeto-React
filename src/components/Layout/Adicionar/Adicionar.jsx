@@ -40,7 +40,7 @@ const Adicionar = () => {
         <div>
           < Input 
             dados="Nome do Proprietario:"
-            id={1}
+            number={1}
             maximoCaracter={"55"}
             funcao={setInfos}
             infos={infos}
@@ -48,7 +48,7 @@ const Adicionar = () => {
 
           < Input 
             dados="Modelo do Veiculo:"
-            id={2}
+            number={2}
             maximoCaracter={"20"}
             funcao={setInfos}
             infos={infos}
@@ -56,7 +56,7 @@ const Adicionar = () => {
 
           < Input 
             dados="Placa do Veiculo:"
-            id={3}
+            number={3}
             maximoCaracter={"7"}
             funcao={setInfos}
             infos={infos}
@@ -67,7 +67,7 @@ const Adicionar = () => {
             dados1="Funcionario"
             title="Funcionarios"
             arr={arr}
-            id={4}
+            number={4}
             funcao={setInfos}
             infos={infos}
           />
@@ -78,7 +78,7 @@ const Adicionar = () => {
             title="Vaga"
             datas={data}
             arr={arr}
-            id={5}
+            number={5}
             funcao={setInfos}
             infos={infos}
           />

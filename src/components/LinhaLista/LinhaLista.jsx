@@ -13,8 +13,10 @@ import {
   ContLinhas
 } from './style.jsx';
 import { deletar } from '../../utils/functionsDB.js';
+import { Link } from 'react-router-dom';
 
 const LinhaLista = (props) => {
+
   return (
     <>
       <ContLinhas>
@@ -25,7 +27,9 @@ const LinhaLista = (props) => {
           </ContTitleList>
           <ContGeralImgs>
             <ContImgs>
-              <ImgsIcons src={ImgLapis} alt="" />
+                <Link to={{ pathname: "/edit", state: props.dados }}>
+                  <ImgsIcons src={ImgLapis}  alt=""/>
+                </Link>
             </ContImgs>
             <ContImgs>
               <ImgsIcons
@@ -47,6 +51,7 @@ const LinhaLista = (props) => {
                 }
                 alt=""
               />
+
             </ContImgs>
           </ContGeralImgs>
         </ContGeral>
