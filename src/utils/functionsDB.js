@@ -70,6 +70,7 @@ export const deletar = async (props) => {
     if(v.vaga === props){
       data.splice(i, 1)
     }
+    return data
   })
   
   return data
