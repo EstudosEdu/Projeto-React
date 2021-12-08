@@ -44,11 +44,15 @@ const LinhaLista = (props) => {
             <ContImgs>
               <ImgsIcons
                 src={ImgSair}
-                onClick={() =>
-                  deletar(props.dados.vaga).then(dado =>
-                    props.setaData([...dado])
-                  )
+                onClick={() =>  {
+                  let protecao = window.confirm(`Deseja remover o veiculo "${props.dados.model}" da lista?`);
+                  if(protecao){
+                    deletar(props.dados.vaga).then(dado =>
+                      props.setaData([...dado])
+                    )
+                  }
                 }
+              }
                 alt=""
               />
 
