@@ -63,7 +63,7 @@ const InputSelect = (props) => {
         )}
       >
         <option selected disabled>
-        {props.edit ? `Vaga ${props.place}` : `${props.title}`}
+        {props.edit ? `Vaga ${props.place}` : `${props.place}`}
         </option>
 
         {props.title == "Vaga" ? vaga() : funcionarios()}

@@ -78,6 +78,7 @@ const Editar = (props) => {
             number={4}
             infos={infos}
             funcao={setInfos}
+            place={props.location.state.funcionario}
           />
 
           <InputSelect
@@ -112,6 +113,13 @@ const Editar = (props) => {
         >
           Enviar
         </button>
+        
+        <button
+          onClick={() => setRedirect(true)}
+        >
+          Voltar
+        </button>
+
       </ContainerGeral>
     </>
   )

@@ -76,7 +76,7 @@ export const deletar = async (props) => {
 }
 
 // =================================================================================================
-// delete 
+// update 
 
 export const update = async (dado) => {
   red = false;
@@ -90,12 +90,6 @@ export const update = async (dado) => {
       data[i].funcionario = dado.funcionario
     }
   }
-  
-  // data.filter((v, i) => {
-    // if(v.id == dado.id){
-    //   console.log(Number(dado.vaga));
-    // }
-  // })
 
   red = true;
   return red;
