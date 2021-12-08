@@ -4,6 +4,7 @@ import Bottao from '../../Bottao/Bottao.jsx';
 import LinhaLista from '../../LinhaLista/LinhaLista.jsx';
 import { data } from '../../../db.jsx';
 import Modal from '../../modal/Modal.jsx';
+import '../../Bottao/btn_style.css';
 
 const Lista = () => {
 
@@ -31,15 +32,11 @@ const Lista = () => {
           </Add>
         </div>
         
+        <Bottao nome="Adicionar"/>
+        
         {datas.map((datas) => (
           <LinhaLista  modal={Modal} setModal={setModal} dadoModal={dadoModal} setDadoModal={setDadoModal} dados={datas} setDados={setDatas} setaData={setDatas}/>
         ))}
-        <br />
-        <br />
-        <span>
-          <Bottao nome="Adicionar"/>
-          
-        </span>
       </ContainerGeral>
     </>
   )

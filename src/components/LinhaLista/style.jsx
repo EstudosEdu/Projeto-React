@@ -9,10 +9,21 @@ export const ContImgs = styled.span`
   background: #3B4859;
   border-radius: 50%;
   overflow: hidden;
+  transition: all .6s;
+  &:hover{
+    transform: scale(1.1);
+    box-shadow: 1px 2px 2px rgba(0,0,0,0.5);
+    background: #323940;
+  }
 `;
 
 export const ImgsIcons = styled.img`
   width: 50%;
+`;
+
+export const ImgsIconsPencil = styled.img`
+  width: 100%;
+  margin-top: 20%;
 `;
 
 export const ContGeralImgs = styled.div`

@@ -55,8 +55,7 @@ const verificaGeral = async (nome, modelo, placa, vaga, funcionario) => {
         funcionario: funcionario
       },
     )
-    res = true
-    console.log(data);
+    res = true;
   }else{
     alert('Preencha todas as informações!!!!')
   }

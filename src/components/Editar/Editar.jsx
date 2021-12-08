@@ -4,7 +4,8 @@ import Input from '../Input/Input.jsx';
 import InputSelect from '../InputSelect/InputSelect.jsx';
 import { update } from '../../utils/functionsDB.js';
 import { data } from '../../db.jsx';
-import { Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom';
+import '../Bottao/btn_style.css';
 
 
 
@@ -77,6 +78,7 @@ const Editar = (props) => {
             number={4}
             infos={infos}
             funcao={setInfos}
+            edit={true}
             place={props.location.state.funcionario}
           />
 
@@ -95,6 +97,7 @@ const Editar = (props) => {
         </div>
 
         <button
+          className="link"
           onClick={() => {
             update(infos).then((red) => {
               setRedirect(red)
@@ -105,6 +108,7 @@ const Editar = (props) => {
         </button>
         
         <button
+          className="link edit"
           onClick={() => setRedirect(true)}
         >
           Voltar

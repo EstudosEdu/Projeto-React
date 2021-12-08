@@ -7,6 +7,7 @@ import {
   TitleLine,
   InfoLine
 } from './style.jsx';
+import '../Bottao/btn_style.css';
 
 const Modal = (props) => {
   return(
@@ -40,7 +41,7 @@ const Modal = (props) => {
             <InfoLine>Vaga {props.dado.vaga}</InfoLine>
           </ContLineInfo>
           
-          <button onClick={() => props.func(false)}>Fechar</button>
+          <button className="link" onClick={() => props.func(false)}>Fechar</button>
         </ContainerG>
       </ContainerFundo>
     </>

@@ -35,13 +35,14 @@ const InputSelect = (props) => {
         }
       } 
     }
- 
+
     return arr.map((arr)=>{
       return(
         <option value={arr}>{arr}</option>
       )
     })
   }
+
 
   return(
     <>
@@ -62,9 +63,16 @@ const InputSelect = (props) => {
           }
         )}
       >
-        <option selected disabled>
-        {props.edit ? `Vaga ${props.place}` : `${props.place}`}
-        </option>
+        {props.edit ?
+            <option selected disabled>
+              {props.place}
+            </option>
+          :
+            <option selected disabled>
+              {props.tipo === "Add1" && "Escolha uma vaga"}
+              {props.tipo === "Add" && "Escolha um Funcionario"}
+            </option>
+        }
 
         {props.title === "Vaga" ? vaga() : funcionarios()}
 

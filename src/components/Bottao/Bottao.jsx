@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './style.css';
+import './btn_style.css';
 
 
 const Bottao = props => {
   
   function btnAdd(){
      return <button
+     className="link"
      onClick={() =>
        props.func(props.info).then(i => {
          if (i) {
@@ -21,7 +22,7 @@ const Bottao = props => {
 
   function btnList(){
     return <Link to="/">
-      <button>{props.nome}</button>
+      <button className="link">{props.nome}</button>
     </Link>
   }
 

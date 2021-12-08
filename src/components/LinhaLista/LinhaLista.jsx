@@ -2,12 +2,13 @@ import React from 'react';
 import ImgSair from '../../assets/box-arrow-in-right.svg';
 import ImgLapis from '../../assets/pencil.svg';
 import ImgLupa from '../../assets/search.svg';
-import { 
-  ContImgs, 
-  ImgsIcons, 
-  ContGeralImgs, 
-  ContGeral, 
-  ContTitleList, 
+import {
+  ContImgs,
+  ImgsIcons,
+  ImgsIconsPencil,
+  ContGeralImgs,
+  ContGeral,
+  ContTitleList,
   NumberVaga,
   NameCar,
   ContLinhas
@@ -28,7 +29,7 @@ const LinhaLista = (props) => {
           <ContGeralImgs>
             <ContImgs>
                 <Link to={{ pathname: "/edit", state: props.dados }}>
-                  <ImgsIcons src={ImgLapis}  alt=""/>
+                  <ImgsIconsPencil src={ImgLapis}  alt=""/>
                 </Link>
             </ContImgs>
             <ContImgs>

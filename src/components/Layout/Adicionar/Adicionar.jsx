@@ -63,24 +63,22 @@ const Adicionar = () => {
             />
 
           < InputSelect 
-            dados="Nome do Funcionario:" 
-            dados1="Funcionario"
             title="Funcionarios"
             arr={arr}
             number={4}
             funcao={setInfos}
             infos={infos}
+            tipo="Add"
           />
 
           < InputSelect 
-            dados="Vaga Alocada:" 
-            dados1="1"
             title="Vaga"
             datas={data}
             arr={arr}
             number={5}
             funcao={setInfos}
             infos={infos}
+            tipo="Add1"
           />
 
         </div>
@@ -91,7 +89,6 @@ const Adicionar = () => {
           info={infos}
           redirect={redirect}
           setredirect={setRedirect}
-          // link={"/list"}
         />
       </ContainerGeral>
     </>
