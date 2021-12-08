@@ -27,7 +27,7 @@ const Bottao = props => {
 
   return(
       <>
-        {props.nome == "GUARDAR" ? btnAdd() : btnList()}
+        {props.nome === "GUARDAR" ? btnAdd() : btnList()}
       </>
   )
 }

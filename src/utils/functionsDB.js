@@ -40,9 +40,9 @@ const verificaPlaca =  async (nome, modelo, placa, vaga, funcionario) => {
 const verificaGeral = async (nome, modelo, placa, vaga, funcionario) => {
   res = false
   if(
-    ((nome && modelo) != '' || null)
-    && (vaga != "Vaga") 
-    && (funcionario != "Funcionarios")
+    ((nome && modelo) !== '' || null)
+    && (vaga !== "Vaga") 
+    && (funcionario !== "Funcionarios")
   ){
     
     data.push(
@@ -67,7 +67,7 @@ const verificaGeral = async (nome, modelo, placa, vaga, funcionario) => {
 // delete 
 export const deletar = async (props) => {
   data.filter((v, i) => {
-    if(v.vaga == props){
+    if(v.vaga === props){
       data.splice(i, 1)
     }
   })
@@ -81,7 +81,7 @@ export const deletar = async (props) => {
 export const update = async (dado) => {
   red = false;
   for(let i = 0; i < data.length; i++){
-    if(data[i].id == dado.id){
+    if(data[i].id === dado.id){
       data[i].id = dado.id
       data[i].nome = dado.nome
       data[i].placa = dado.placa

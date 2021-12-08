@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Title, Add, ContainerGeral} from '../Adicionar/style.jsx';
 import Bottao from '../../Bottao/Bottao.jsx';
 import LinhaLista from '../../LinhaLista/LinhaLista.jsx';

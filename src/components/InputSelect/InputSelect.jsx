@@ -30,7 +30,7 @@ const InputSelect = (props) => {
     
     for(let i = 0; i< newArr.length; i++){
       for(let j = 0; j < arr.length; j++){
-        if(arr[j] == newArr[i]){
+        if(arr[j] === newArr[i]){
           arr.splice(j, 1);
         }
       } 
@@ -54,11 +54,11 @@ const InputSelect = (props) => {
         onChange={(e) => props.funcao(
           {
             id: props.infos.id,
-            nome : props.number == 1 ? e.target.value : props.infos.nome,
-            model : props.number == 2 ? e.target.value : props.infos.model,
-            placa : props.number == 3 ? e.target.value : props.infos.placa,
-            funcionario : props.number == 4 ? e.target.value : props.infos.funcionario,
-            vaga : props.number == 5 ? e.target.value : props.infos.vaga
+            nome : props.number === 1 ? e.target.value : props.infos.nome,
+            model : props.number === 2 ? e.target.value : props.infos.model,
+            placa : props.number === 3 ? e.target.value : props.infos.placa,
+            funcionario : props.number === 4 ? e.target.value : props.infos.funcionario,
+            vaga : props.number === 5 ? e.target.value : props.infos.vaga
           }
         )}
       >
@@ -66,7 +66,7 @@ const InputSelect = (props) => {
         {props.edit ? `Vaga ${props.place}` : `${props.place}`}
         </option>
 
-        {props.title == "Vaga" ? vaga() : funcionarios()}
+        {props.title === "Vaga" ? vaga() : funcionarios()}
 
 
       </Digite>

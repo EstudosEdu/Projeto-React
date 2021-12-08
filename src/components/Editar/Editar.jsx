@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import { ContainerGeral, ContTitle, Title, Add } from '../Layout/Adicionar/style.jsx';
 import Input from '../Input/Input.jsx';
-import Bottao from '../Bottao/Bottao.jsx';
 import InputSelect from '../InputSelect/InputSelect.jsx';
 import { update } from '../../utils/functionsDB.js';
 import { data } from '../../db.jsx';
@@ -94,15 +93,6 @@ const Editar = (props) => {
             place={props.location.state.vaga}
           />
         </div>
-
-        {/* <Bottao 
-          nome="GUARDAR"
-          func={update}
-          info={infos}
-          redirect={redirect}
-          setredirect={setRedirect}
-          // link={"/list"}
-        /> */}
 
         <button
           onClick={() => {
