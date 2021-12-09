@@ -3,13 +3,9 @@ import { data } from '../../db.jsx';
 import { Title, Digite, Container } from './style.jsx'
 
 const InputSelect = (props) => {
+  const arrFuncionarios = props.todosFuncionarios
   const arr = props.arr;
   // console.log(props.arr);
-  const arrFuncionarios = [
-    {nome: "joão"},
-    {nome: "Luan"},
-    {nome: "Natan"}
-  ];
 
   function funcionarios(){
     return arrFuncionarios.map((arrFuncionarios) => {
@@ -69,8 +65,8 @@ const InputSelect = (props) => {
             </option>
           :
             <option selected disabled>
-              {props.tipo === "Add1" && "Escolha uma vaga"}
-              {props.tipo === "Add" && "Escolha um Funcionario"}
+              {props.tipo === "Add1" && props.arr[0]}
+              {props.tipo === "Add" && arrFuncionarios[0].nome}
             </option>
         }
 

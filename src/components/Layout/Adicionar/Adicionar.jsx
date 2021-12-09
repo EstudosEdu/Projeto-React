@@ -10,21 +10,40 @@ import { Redirect } from 'react-router-dom'
 
 
 const Adicionar = () => {
+  const [arr] = useState([])
+  for(let i = 1; i<= 30; i++){arr.push(i)}
+  
+  let newArr = data.map((data) => {
+    return data.vaga
+  });
+
+  for(let i = 0; i< newArr.length; i++){
+    for(let j = 0; j < arr.length; j++){
+      if(arr[j] === newArr[i]){
+        arr.splice(j, 1);
+      }
+    } 
+  }
+
+  const arrFuncionarios = [
+    {nome: "joão"},
+    {nome: "Luan"},
+    {nome: "Natan"}
+  ];
+
   const [ infos, setInfos ] = useState({
   nome: "",
   model: "",
   placa: "",
-  vaga: "",
-  funcionario: ""});
-  
-  const arr = []
-  for(let i = 1; i<= 30; i++){arr.push(i)}
+  vaga: arr[0],
+  funcionario: arrFuncionarios[0].nome});
 
   const [redirect, setRedirect] = useState(null);
 
   if(redirect){
     return <Redirect to="/list"/>
   }
+  
 
   return(
     <>
@@ -69,6 +88,7 @@ const Adicionar = () => {
             funcao={setInfos}
             infos={infos}
             tipo="Add"
+            todosFuncionarios={arrFuncionarios}
           />
 
           < InputSelect 

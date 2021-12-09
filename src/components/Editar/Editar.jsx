@@ -30,6 +30,12 @@ const Editar = (props) => {
     return <Redirect to="/list"/>
   }
 
+  const arrFuncionarios = [
+    {nome: "joão"},
+    {nome: "Luan"},
+    {nome: "Natan"}
+  ];
+
   return (
     <>
       <ContainerGeral>
@@ -80,6 +86,7 @@ const Editar = (props) => {
             funcao={setInfos}
             edit={true}
             place={props.location.state.funcionario}
+            todosFuncionarios={arrFuncionarios}
           />
 
           <InputSelect
