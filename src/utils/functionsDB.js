@@ -12,7 +12,7 @@ let red = false;
 
 
 // funções publicas
-const verificaPlaca =  async (nome, modelo, placa, vaga, funcionario) => {
+const verificaPlaca =  async (placa) => {
   let resul1 = /([A-Z]{3})([0-9]{4})/gi.test(placa); /*padrão aaa1111 */
   let resul2 = /([A-Z]{3})([0-9]{1})([A-Z]{1})([0-9]{2})/gi.test(placa); /*padrão aaa1a11 */
 
@@ -21,7 +21,7 @@ const verificaPlaca =  async (nome, modelo, placa, vaga, funcionario) => {
   else return false;
 }
 
-const verificaGeral = async (nome, modelo, placa, vaga, funcionario) => {
+const verificaGeral = async (nome, modelo, vaga, funcionario) => {
   if(((nome && modelo) !== '' || null) && (vaga !== "Vaga") && (funcionario !== "Funcionarios")) return true;
 }
 
@@ -34,15 +34,15 @@ export const create = async (dado) => {
   let vaga = dado.vaga;
   let funcionario = dado.funcionario;
 
-  await verificaPlaca(nome, modelo, placa, vaga, funcionario)
+  await verificaPlaca(placa)
     .then((resposta) => {
       if(resposta === "modelo-placa-1") {
-         verificaGeral(nome, modelo, placa, vaga, funcionario)
+         verificaGeral(nome, modelo, vaga, funcionario)
           .then((res) => res ?  addBanco(nome, modelo, placa, vaga, funcionario) : alert('Preencha todas as informações!!!!'));
       }
 
       if(resposta === "modelo-placa-2") {
-         verificaGeral(nome, modelo, placa, vaga, funcionario)
+         verificaGeral(nome, modelo, vaga, funcionario)
           .then((res) => res ?  addBanco(nome, modelo, placa, vaga, funcionario) : alert('Preencha todas as informações!!!!'));
       }
 
@@ -84,15 +84,15 @@ export const deletar = async (props) => {
 // update 
 export const update = async (dado) => {
   red = false;
-  await verificaPlaca(dado.nome, dado.model, dado.placa, dado.vaga, dado.funcionario)
+  await verificaPlaca(dado.placa)
     .then((resposta) => {
       if(resposta === "modelo-placa-1") {
-         verificaGeral(dado.nome, dado.model, dado.placa, dado.vaga, dado.funcionario)
+         verificaGeral(dado.nome, dado.model, dado.vaga, dado.funcionario)
           .then((res) => res ?  updateBanco(dado) : alert('Preencha todas as informações!!!!'));
       }
 
       if(resposta === "modelo-placa-2") {
-         verificaGeral(dado.nome, dado.model, dado.placa, dado.vaga, dado.funcionario)
+         verificaGeral(dado.nome, dado.model, dado.vaga, dado.funcionario)
           .then((res) => res ?  updateBanco(dado) : alert('Preencha todas as informações!!!!'));
       }
 
