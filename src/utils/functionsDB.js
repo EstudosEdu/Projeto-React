@@ -1,8 +1,3 @@
-// Create
-// getAll 
-// update 
-// delete
-
 // chamar arrow function no jsx assim = ()=> nomeDaFunção
 // em js chama assim nomeDaFunção()
 
