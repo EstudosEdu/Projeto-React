@@ -12,8 +12,7 @@ import {
   NumberVaga,
   NameCar,
   ContLinhas
-} from './style.jsx';
-import { deletar } from '../../utils/functionsDB.js';
+} from './style.jsx';import { deletar } from '../../utils/functionsDB.js';
 import { Link } from 'react-router-dom';
 
 const LinhaLista = (props) => {
@@ -23,8 +22,8 @@ const LinhaLista = (props) => {
       <ContLinhas>
         <ContGeral>
           <ContTitleList>
-            <NameCar>{props.dados.model}</NameCar>
-            <NumberVaga>Vaga {props.dados.vaga}</NumberVaga>
+            <NameCar>{props.dados.Modelo}</NameCar>
+            <NumberVaga>Vaga {props.dados.Vaga}</NumberVaga>
           </ContTitleList>
           <ContGeralImgs>
             <ContImgs>
@@ -48,9 +47,8 @@ const LinhaLista = (props) => {
                 onClick={() =>  {
                   let protecao = window.confirm(`Deseja remover o veiculo "${props.dados.model}" da lista?`);
                   if(protecao){
-                    deletar(props.dados.vaga).then(dado =>
-                      props.setaData([...dado])
-                    )
+                    deletar(props.dados.id)
+                    props.setEstado(!props.estado)
                   }
                 }
               }

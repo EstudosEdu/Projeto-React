@@ -18,27 +18,27 @@ const Modal = (props) => {
 
           <ContLineInfo>
             <TitleLine>Nome do Proprietario:</TitleLine>
-            <InfoLine>{props.dado.nome}</InfoLine>
+            <InfoLine>{props.dado.Proprietario}</InfoLine>
           </ContLineInfo>
 
           <ContLineInfo>
             <TitleLine>Modelo do Veiculo:</TitleLine>
-            <InfoLine>{props.dado.model}</InfoLine>
+            <InfoLine>{props.dado.Modelo}</InfoLine>
           </ContLineInfo>
 
           <ContLineInfo>
             <TitleLine>Placa do Veiculo:</TitleLine>
-            <InfoLine>{props.dado.placa}</InfoLine>
+            <InfoLine>{props.dado.Placa}</InfoLine>
           </ContLineInfo>
 
           <ContLineInfo>
             <TitleLine>Nome do Funcionario:</TitleLine>
-            <InfoLine>{props.dado.funcionario}</InfoLine>
+            <InfoLine>{props.dado.Funcionario}</InfoLine>
           </ContLineInfo>
 
           <ContLineInfo>
             <TitleLine>Vaga Alocada:</TitleLine>
-            <InfoLine>Vaga {props.dado.vaga}</InfoLine>
+            <InfoLine>Vaga {props.dado.Vaga}</InfoLine>
           </ContLineInfo>
           
           <button className="link" onClick={() => props.func(false)}>Fechar</button>

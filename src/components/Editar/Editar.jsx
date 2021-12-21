@@ -13,11 +13,11 @@ const Editar = (props) => {
   
   const [ infos, setInfos ] = useState({
     id: props.location.state.id,
-    nome: props.location.state.nome,
-    placa: props.location.state.placa,
-    model: props.location.state.model,
-    vaga: props.location.state.vaga,
-    funcionario: props.location.state.funcionario
+    nome: props.location.state.Proprietario,
+    placa: props.location.state.Placa,
+    model: props.location.state.Modelo,
+    vaga: props.location.state.Vaga,
+    funcionario: props.location.state.Funcionario
   });
 
   
@@ -53,7 +53,7 @@ const Editar = (props) => {
             funcao={setInfos}
             infos={infos}
             edit={true}
-            place={props.location.state.nome}
+            place={props.location.state.Proprietario}
           />
 
           <Input
@@ -63,7 +63,7 @@ const Editar = (props) => {
             funcao={setInfos}
             infos={infos}
             edit={true}
-            place={props.location.state.model}
+            place={props.location.state.Modelo}
           />
 
           <Input
@@ -73,7 +73,7 @@ const Editar = (props) => {
             funcao={setInfos}
             infos={infos}
             edit={true}
-            place={props.location.state.placa}
+            place={props.location.state.Placa}
           />
 
           <InputSelect
@@ -85,7 +85,7 @@ const Editar = (props) => {
             infos={infos}
             funcao={setInfos}
             edit={true}
-            place={props.location.state.funcionario}
+            place={props.location.state.Funcionario}
             todosFuncionarios={arrFuncionarios}
           />
 
@@ -99,7 +99,7 @@ const Editar = (props) => {
             infos={infos}
             funcao={setInfos}
             edit={true}
-            place={props.location.state.vaga}
+            place={props.location.state.Vaga}
           />
         </div>
 

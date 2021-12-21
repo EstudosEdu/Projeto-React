@@ -1,7 +1,6 @@
 // chamar arrow function no jsx assim = ()=> nomeDaFunção
 // em js chama assim nomeDaFunção()
-
-import { data } from '../db.jsx';
+import Axios from 'axios';
 let res = false;
 let red = false;
 
@@ -43,20 +42,21 @@ export const create = async (dado) => {
 
       if(resposta === false) alert("Modelo de Placa Invalido!!!");
     });
-  return res;
+    return res;
 };
 
 const addBanco = async (nome, modelo, placa, vaga, funcionario) => {
-  data.push(
-    {
-      id: data.length + 1,
-      nome: nome, 
-      placa: placa, 
-      model: modelo,
-      vaga: Number(vaga),
-      funcionario: funcionario
-    },
-  );
+
+  Axios.post('http://localhost:8001/add', {
+    Proprietario: nome, 
+    Placa: placa, 
+    Modelo: modelo,
+    Vaga: Number(vaga),
+    Funcionario: funcionario
+  }).then((res) => {
+    console.log(res);
+  })
+
   res = true;
 }
 
@@ -64,14 +64,9 @@ const addBanco = async (nome, modelo, placa, vaga, funcionario) => {
 // =================================================================================================
 // delete 
 export const deletar = async (props) => {
-  data.filter((v, i) => {
-    if(v.vaga === props){
-      data.splice(i, 1)
-    }
-    return data
+  Axios.post('http://localhost:8001/delete', {
+    id: props
   })
-  
-  return data
 }
 
 
@@ -79,35 +74,27 @@ export const deletar = async (props) => {
 // update 
 export const update = async (dado) => {
   red = false;
+
   await verificaPlaca(dado.placa)
     .then((resposta) => {
       if(resposta === "modelo-placa-1") {
-         verificaGeral(dado.nome, dado.model, dado.vaga, dado.funcionario)
-          .then((res) => res ?  updateBanco(dado) : alert('Preencha todas as informações!!!!'));
+          verificaGeral(dado.nome, dado.model, dado.vaga, dado.funcionario)
+            .then((res) => res ?  updateBanco(dado) : alert('Preencha todas as informações!!!!'));
       }
 
       if(resposta === "modelo-placa-2") {
-         verificaGeral(dado.nome, dado.model, dado.vaga, dado.funcionario)
-          .then((res) => res ?  updateBanco(dado) : alert('Preencha todas as informações!!!!'));
+          verificaGeral(dado.nome, dado.model, dado.vaga, dado.funcionario)
+            .then((res) => res ?  updateBanco(dado) : alert('Preencha todas as informações!!!!'));
       }
 
       if(resposta === false) alert("Modelo de Placa Invalido!!!");
-    });
+    })
+  
   return red;
 }
-
-const updateBanco = (dado) => {
-
-  for(let i = 0; i < data.length; i++){
-    if(data[i].id === dado.id){
-      data[i].id = dado.id
-      data[i].nome = dado.nome
-      data[i].placa = dado.placa
-      data[i].model = dado.model
-      data[i].vaga = Number(dado.vaga)
-      data[i].funcionario = dado.funcionario
-    }
-  }
+  
+const updateBanco = async (dado) => {
+  Axios.post('http://localhost:8001/update', dado);
 
   red = true;
 }
