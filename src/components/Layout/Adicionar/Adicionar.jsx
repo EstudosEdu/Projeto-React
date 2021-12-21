@@ -9,8 +9,6 @@ import Axios from 'axios';
 
 const Adicionar = () => {
   const [arr] = useState([]);
-  for(let i = 1; i<= 30; i++){arr.push(i)}
-  
   const [data, setData] = useState();
   
   useEffect(() =>{
@@ -19,6 +17,8 @@ const Adicionar = () => {
       setData(res.data);
     })
   }, []);
+
+  for(let i = 1; i<= 30; i++){arr.push(i)}
 
   let newArr = typeof data !== 'undefined' && data.map((data) => {
     return data.Vaga
@@ -38,16 +38,14 @@ const Adicionar = () => {
     {nome: "Natan"}
   ];
 
-
-
   const [ infos, setInfos ] = useState({
   nome: "",
   model: "",
   placa: "",
   vaga: arr[0],
-  funcionario: arrFuncionarios[0].nome});
+  funcionario: arrFuncionarios[0].nome
+  });
 
-  console.log(infos.vaga);
 
   const [redirect, setRedirect] = useState(null);
 
