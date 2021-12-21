@@ -1,20 +1,27 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { ContainerGeral, ContTitle, Title, Add } from './style.jsx'
 import Input from '../../Input/Input.jsx';
 import Bottao from '../../Bottao/Bottao.jsx';
 import InputSelect from '../../InputSelect/InputSelect.jsx';
 import { create } from '../../../utils/functionsDB.js';
-import { data } from '../../../db.jsx';
-import { Redirect } from 'react-router-dom'
-
-
+import { Redirect } from 'react-router-dom';
+import Axios from 'axios';
 
 const Adicionar = () => {
-  const [arr] = useState([])
+  const [arr] = useState([]);
   for(let i = 1; i<= 30; i++){arr.push(i)}
   
-  let newArr = data.map((data) => {
-    return data.vaga
+  const [data, setData] = useState();
+  
+  useEffect(() =>{
+    Axios.get('http://localhost:8001/')
+    .then((res) => {
+      setData(res.data);
+    })
+  }, []);
+
+  let newArr = typeof data !== 'undefined' && data.map((data) => {
+    return data.Vaga
   });
 
   for(let i = 0; i< newArr.length; i++){
@@ -31,12 +38,16 @@ const Adicionar = () => {
     {nome: "Natan"}
   ];
 
+
+
   const [ infos, setInfos ] = useState({
   nome: "",
   model: "",
   placa: "",
   vaga: arr[0],
   funcionario: arrFuncionarios[0].nome});
+
+  console.log(infos.vaga);
 
   const [redirect, setRedirect] = useState(null);
 

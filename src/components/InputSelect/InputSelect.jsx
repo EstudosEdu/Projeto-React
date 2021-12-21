@@ -1,12 +1,11 @@
 import React from 'react';
-import { data } from '../../db.jsx';
 import { Title, Digite, Container } from './style.jsx'
 
 const InputSelect = (props) => {
+  const data = props.datas
   const arrFuncionarios = props.todosFuncionarios
   const arr = props.arr;
-  // console.log(props.arr);
-
+  
   function funcionarios(){
     return arrFuncionarios.map((arrFuncionarios) => {
       return(
@@ -20,9 +19,9 @@ const InputSelect = (props) => {
 
 
   function vaga(){
-    let newArr = data.map((data) => {
-        return data.vaga
-      });
+    let newArr = typeof data !== 'undefined' && data.map((data) => {
+      return data.Vaga
+    });
     
     for(let i = 0; i< newArr.length; i++){
       for(let j = 0; j < arr.length; j++){
@@ -65,7 +64,7 @@ const InputSelect = (props) => {
             </option>
           :
             <option selected disabled>
-              {props.tipo === "Add1" && props.arr[0]}
+              {props.tipo === "Add1" && arr[0]}
               {props.tipo === "Add" && arrFuncionarios[0].nome}
             </option>
         }

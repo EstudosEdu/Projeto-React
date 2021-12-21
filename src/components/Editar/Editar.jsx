@@ -1,15 +1,21 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { ContainerGeral, ContTitle, Title, Add } from '../Layout/Adicionar/style.jsx';
 import Input from '../Input/Input.jsx';
 import InputSelect from '../InputSelect/InputSelect.jsx';
 import { update } from '../../utils/functionsDB.js';
-import { data } from '../../db.jsx';
 import { Redirect } from 'react-router-dom';
 import '../Bottao/btn_style.css';
-
+import Axios from 'axios';
 
 
 const Editar = (props) => {
+  const [data, setData] = useState()
+  useEffect(() =>{
+    Axios.get('http://localhost:8001/')
+    .then((res) => {
+      setData(res.data);
+    })
+  }, []);
   
   const [ infos, setInfos ] = useState({
     id: props.location.state.id,
