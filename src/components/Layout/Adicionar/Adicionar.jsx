@@ -9,6 +9,8 @@ import Axios from 'axios';
 
 const Adicionar = () => {
   const [arr] = useState([]);
+  for(let i = 1; i<= 30; i++){arr.push(i)}
+
   const [data, setData] = useState();
   
   useEffect(() =>{
@@ -18,19 +20,22 @@ const Adicionar = () => {
     })
   }, []);
 
-  for(let i = 1; i<= 30; i++){arr.push(i)}
+  useEffect( () =>
+  {
+    let newArr = data !== undefined && data.map((data) => {
+      return data.Vaga
+    });
 
-  let newArr = typeof data !== 'undefined' && data.map((data) => {
-    return data.Vaga
-  });
-
-  for(let i = 0; i< newArr.length; i++){
-    for(let j = 0; j < arr.length; j++){
-      if(arr[j] === newArr[i]){
-        arr.splice(j, 1);
+    for(let i = 0; i < newArr.length; i++){
+      for(let j = 0; j < arr.length; j++){
+        if(arr[j] === newArr[i]){
+          arr.splice(j, 1);
+        }
       }
-    } 
-  }
+    }
+
+    infos.vaga = arr[0]
+  }, [data]);
 
   const arrFuncionarios = [
     {nome: "joão"},
@@ -39,20 +44,18 @@ const Adicionar = () => {
   ];
 
   const [ infos, setInfos ] = useState({
-  nome: "",
-  model: "",
-  placa: "",
-  vaga: arr[0],
-  funcionario: arrFuncionarios[0].nome
+    nome: "",
+    model: "",
+    placa: "",
+    vaga: arr[0],
+    funcionario: arrFuncionarios[0].nome
   });
-
 
   const [redirect, setRedirect] = useState(null);
 
   if(redirect){
     return <Redirect to="/list"/>
   }
-  
 
   return(
     <>
